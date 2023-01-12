@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import monsterpedia from './data/monsterpedia.json'
 
-function Hunter(props) {
+function PlayerGuild(props) {
   return (
     <div>
-        <p>{props.hunterName}</p>
-        <p>Rank: {props.hunterRank}</p>
-        <p>Attack: {props.hunterAttack}</p>
-        <p>Monsters Hunted: {props.hunterTotalHunts}</p>
+        <p>{props.playerGuildName}</p>
+        <p>Rank {props.playerGuildRank}</p>
+        <p>Guild XP: {props.playerGuildXp} / {props.playerGuildXpToNextLevel}</p>
+        <p>Money: {props.playerGuildMoney}</p>
+        <p>Guild Points: {props.playerGuildPoints}</p>
+        <p>Attack Power: {props.playerGuildAttackPower}</p>
+        <p>Monsters Hunted: {props.playerGuildTotalHunts}</p>
     </div>
   )
 }
@@ -17,9 +21,8 @@ function Monster(props) {
   return (
     <div>
         <p>{props.monsterName}</p>
-        <img src={props.monsterName + '.png'} onClick={props.onClick}/>
-        <p>Level: {props.monsterLevel}</p>
-        <p>Health: {props.monsterHealth}</p>
+        <img src={'img/monsters/' + props.monsterName + '.png'} onClick={props.onClick}/>
+        <p>Health: {props.monsterCurrentHealth} / {props.monsterTotalHealth}</p>
     </div>
   )
 }
@@ -31,7 +34,8 @@ class Battle extends React.Component {
       <Monster
         monsterName={this.props.monsterName}
         monsterLevel={this.props.monsterLevel}
-        monsterHealth={this.props.monsterHealth}
+        monsterTotalHealth={this.props.monsterTotalHealth}
+        monsterCurrentHealth={this.props.monsterCurrentHealth}
         onClick={() => this.props.onClick()}
       />
     )
@@ -51,92 +55,90 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hunterName: 'Hero',
-      hunterRank: 1,
-      hunterAttack: 10,
-      hunterTotalHunts: null,
-      currentMonsterName: null,
-      currentMonsterLevel: null,
-      currentMonsterHealth: null
+      playerGuildName: 'Hunter Guild',
+      playerGuildRank: 1,
+      playerGuildXp: 0,
+      playerGuildXpToNextLevel: 100,
+      playerGuildAttackPower: 50,
+      playerGuildTotalHunts: null,
+      playerGuildMoney: 0,
+      playerGuildPoints: 0,
+      playerGuildHunters: [],
+      monsterName: null,
+      monsterLevel: null,
+      monsterTotalHealth: null,
+      monsterCurrentHealth: null,
+      monsterMoney: 0,
+      monsterPoints: 0,
+      monsterRankXp: 0
     }
   }
 
   componentDidMount() {
     this.refreshMonster();
     this.setState({
-      hunterTotalHunts: 0
+      playerGuildTotalHunts: 0
     })
   }
 
-  handleClick() {
-    const hunterAttack = this.state.hunterAttack;
-      this.setState({
-        currentMonsterHealth: this.state.currentMonsterHealth - hunterAttack
-      })
-  }
 
   refreshMonster() {
-    const monsterList = [
-      {
-        name: 'Anjanath',
-        level: 1,
-        health: 150
-      },
-      {
-        name: 'Arzuros',
-        level: 1,
-        health: 100
-      },
-      {
-        name: 'Barioth',
-        level: 1,
-        health: 135
-      },
-      {
-        name: 'Barroth',
-        level: 1,
-        health: 155
-      },
-      {
-        name: 'Deviljho',
-        level: 1,
-        health: 170
-      },
-      {
-        name: 'Khezu',
-        level: 1,
-        health: 145
-      },
-      {
-        name: 'Rathalos',
-        level: 1,
-        health: 150
+    const monsterList = monsterpedia.map((monster) => {
+      return {
+        name: monster.name,
+        health: monster.baseHealth,
+        money: monster.baseMoney,
+        points: monster.basePoints,
+        rankXp: monster.baseRankXp
       }
-    ]
-
-    const selectedMonster = monsterList[this.getRandomInt(7)]
-    this.setState({
-      currentMonsterName: selectedMonster.name,
-      currentMonsterLevel: selectedMonster.level,
-      currentMonsterHealth: selectedMonster.health
     })
+
+    const selectedMonster = monsterList[this.getRandomInt(111)]
+    console.log(selectedMonster)
+
+    this.setState({
+      monsterName: selectedMonster.name,
+      monsterLevel: selectedMonster.level,
+      monsterTotalHealth: selectedMonster.health,
+      monsterCurrentHealth: selectedMonster.health,
+      monsterMoney: selectedMonster.money,
+      monsterPoints: selectedMonster.points,
+      monsterRankXp: selectedMonster.rankXp
+    })
+    console.log(this.state)
   }
 
   getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-  checkHuntEnd() {
-    if (this.state.currentMonsterHealth <= 0) {
+  handleClick() {
       this.setState({
-        hunterTotalHunts: this.state.hunterTotalHunts + 1
+        monsterCurrentHealth: this.state.monsterCurrentHealth - this.state.playerGuildAttackPower
       })
-      this.refreshMonster();
+      if (this.state.monsterCurrentHealth <= 0) {
+        this.checkBattleEnd();
+      }
+  }
+
+  checkBattleEnd() {
+    this.setState({
+      playerGuildTotalHunts: this.state.playerGuildTotalHunts + 1,
+      playerGuildMoney: this.state.playerGuildMoney + this.state.monsterMoney,
+      playerGuildPoints: this.state.playerGuildPoints + this.state.monsterPoints,
+      playerGuildXp: this.state.playerGuildXp + this.state.monsterRankXp
+    })
+    if (this.state.playerGuildXp >= this.state.playerGuildXpToNextLevel) {
+      this.setState({
+        playerGuildRank: this.state.playerGuildRank + 1,
+        playerGuildXpToNextLevel: 1.5 * this.state.playerGuildXpToNextLevel,
+        playerGuildXp: 0
+      })
     }
+    this.refreshMonster();
   }
 
   render() {
-    this.checkHuntEnd();
     return (
       <div className="game">
         <div className="grid">
@@ -147,20 +149,25 @@ class Game extends React.Component {
           </header>
           <aside className="page-leftbar">
             <div className="content">
-              <Hunter
-              hunterName={this.state.hunterName}
-              hunterRank={this.state.hunterRank}
-              hunterAttack={this.state.hunterAttack}
-              hunterTotalHunts={this.state.hunterTotalHunts}
+              <PlayerGuild
+              playerGuildName={this.state.playerGuildName}
+              playerGuildRank={this.state.playerGuildRank}
+              playerGuildAttackPower={this.state.playerGuildAttackPower}
+              playerGuildMoney={this.state.playerGuildMoney}
+              playerGuildPoints={this.state.playerGuildPoints}
+              playerGuildTotalHunts={this.state.playerGuildTotalHunts}
+              playerGuildXp={this.state.playerGuildXp}
+              playerGuildXpToNextLevel={this.state.playerGuildXpToNextLevel}
               />
             </div>
           </aside>
           <main className="page-main">
             <div className="content">
               <Battle
-                monsterName={this.state.currentMonsterName}
-                monsterLevel={this.state.currentMonsterLevel}
-                monsterHealth={this.state.currentMonsterHealth}
+                monsterName={this.state.monsterName}
+                monsterLevel={this.state.monsterLevel}
+                monsterTotalHealth={this.state.monsterTotalHealth}
+                monsterCurrentHealth={this.state.monsterCurrentHealth}
                 onClick={() => this.handleClick()}
               />
             </div>
