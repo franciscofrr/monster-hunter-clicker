@@ -1,0 +1,10 @@
+.hunter-list-content {
+    color: #242424;
+    background-color: #ac2626;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+}

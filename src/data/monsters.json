@@ -1,0 +1,1794 @@
+[
+  {
+    "name": "Tetsucabra",
+    "type": "Regular",
+    "species": "Amphibian",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Amphibian Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Zamite",
+    "type": "Regular",
+    "species": "Amphibian",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Amphibian Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Zamtrios",
+    "type": "Regular",
+    "species": "Amphibian",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Amphibian Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Baggi",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Blue Yian Kut-Ku",
+    "type": "Subspecies",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Crimson Qurupeco",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Gargwa",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Gendrome",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Genprey",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Great Baggi",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Great Jaggi",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Gypceros",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Iodrome",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Ioprey",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Jaggi",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Jaggia",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Kulu-Ya-Ku",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Purple Gypceros",
+    "type": "Subspecies",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Qurupeco",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Velocidrome",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Velociprey",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Yian Garuga",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Yian Kut-Ku",
+    "type": "Regular",
+    "species": "Bird Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Bird Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Anjanath",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Barroth",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Brachydios",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Deviljho",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Duramboros",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Glavenus",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Jade Barroth",
+    "type": "Subspecies",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Uragaan",
+    "type": "Regular",
+    "species": "Brute Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Brute Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Daimyo Hermitaur",
+    "type": "Regular",
+    "species": "Carapaceon",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Carapaceon Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Hermitaur",
+    "type": "Regular",
+    "species": "Carapaceon",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Carapaceon Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Plum Daimyo Hermitaur",
+    "type": "Subspecies",
+    "species": "Carapaceon",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Carapaceon Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Nergigante",
+    "type": "Regular",
+    "species": "Elder Dragon",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Elder Dragon Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Arzuros",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Ash Kecha Wacha",
+    "type": "Subspecies",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Bulldrome",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Bullfango",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Conga",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Congalala",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Emerald Congalala",
+    "type": "Subspecies",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Gammoth",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Kecha Wacha",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Lagombi",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Popo",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Shakalaka",
+    "type": "Regular",
+    "species": "Fanged Beast",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Beast Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Barioth",
+    "type": "Regular",
+    "species": "Fanged Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Stygian Zinogre",
+    "type": "Subspecies",
+    "species": "Fanged Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Tobi-Kadachi",
+    "type": "Regular",
+    "species": "Fanged Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Zinogre",
+    "type": "Regular",
+    "species": "Fanged Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Fanged Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Astalos",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Azure Rathalos",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Basarios",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Bazelgeuse",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Black Diablos",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Black Gravios",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Brute Tigrex",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Diablos",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Gravios",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Green Nargacuga",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Grimclaw Tigrex",
+    "type": "Deviant",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Khezu",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Legiana",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Monoblos",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Nargacuga",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Paolumu",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Pink Rathian",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Pukei-Pukei",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Rathalos",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Rathian",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Red Khezu",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Ruby Basarios",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Sand Barioth",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Seregios",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Silverwind Nargacuga",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Tigrex",
+    "type": "Regular",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "White Monoblos",
+    "type": "Subspecies",
+    "species": "Flying Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Flying Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Apceros",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Aptonoth",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Kelbi",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Larinoth",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Brown Slagtoth",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Green Slagtoth",
+    "type": "Regular",
+    "species": "Herbivore",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Herbivore Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Agnaktor",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Ivory Lagiacrus",
+    "type": "Subspecies",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Lagiacrus",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Ludroth",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Mizutsune",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Purple Ludroth",
+    "type": "Subspecies",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Royal Ludroth",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Uroktor",
+    "type": "Regular",
+    "species": "Leviathan",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Leviathan Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Altaroth",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Blue Bnahabra",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Brown Bnahabra",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Red Bnahabra",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Green Bnahabra",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Desert Seltas Queen",
+    "type": "Subspecies",
+    "species": "Neopteron",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Blue Konchu",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Green Konchu",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Red Konchu",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Yellow Konchu",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Seltas Queen",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Seltas",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Vespoid",
+    "type": "Regular",
+    "species": "Neopteron",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Neopteron Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Cephadrome",
+    "type": "Regular",
+    "species": "Piscine Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Piscine Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Cephalos",
+    "type": "Regular",
+    "species": "Piscine Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Piscine Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Green Plesioth",
+    "type": "Subspecies",
+    "species": "Piscine Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Piscine Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Plesioth",
+    "type": "Regular",
+    "species": "Piscine Wyvern",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Piscine Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Remobra",
+    "type": "Regular",
+    "species": "Snake Wyvern",
+    "size": "Small",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Snake Wyvern Bone",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Nerscylla",
+    "type": "Regular",
+    "species": "Temnoceran",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Temnoceran Shell",
+        "chance": 100
+      }
+    ]
+  },
+  {
+    "name": "Shrouded Nerscylla",
+    "type": "Subspecies",
+    "species": "Temnoceran",
+    "size": "Large",
+    "baseHealth": 150,
+    "baseMoney": 30,
+    "basePoints": 10,
+    "baseRankXp": 5,
+    "drops": [
+      {
+        "name": "Temnoceran Shell",
+        "chance": 100
+      }
+    ]
+  }
+]
