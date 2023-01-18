@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Guild"
+    },
+    {
+        "name":"Forest"
+    },
+    {
+        "name":"Beach"
+    },
+    {
+        "name":"Desert"
+    },
+    {
+        "name":"Swamp"
+    },
+    {
+        "name":"Jungle"
+    },
+    {
+        "name":"Volcano"
+    },
+    {
+        "name":"Tower"
+    }
+]
