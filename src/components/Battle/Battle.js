@@ -11,7 +11,7 @@ class Battle extends React.Component {
           monsterLevel={this.props.monsterLevel}
           monsterTotalHealth={this.props.monsterTotalHealth}
           monsterCurrentHealth={this.props.monsterCurrentHealth}
-          onClick={() => this.props.handleDirectAttack()}
+          onClick={this.props.handleDirectAttack}
         />
       )
     }
@@ -19,6 +19,7 @@ class Battle extends React.Component {
     render() {
       return (
         <div className="battle-content">
+          Location: {this.props.currentLocation}
           {this.spawnMonster()}
         </div>
       )

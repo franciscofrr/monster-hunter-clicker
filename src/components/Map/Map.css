@@ -1,0 +1,15 @@
+.map-content {
+    color: #242424;
+    background-color: #9093af;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.map-content img {
+    width: 30%;
+    height: 30%;
+}

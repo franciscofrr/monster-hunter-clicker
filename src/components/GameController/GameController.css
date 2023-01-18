@@ -4,8 +4,8 @@
     grid-template-rows: 70px minmax(160px, auto) auto;
     grid-template-areas: 
       'header header'
-      'leftbar main'
-      'nav main'
+      'leftbar battle'
+      'nav map'
       'footer footer';
     column-gap: 10px;
     row-gap: 10px;
@@ -19,8 +19,12 @@
     grid-area: leftbar;
   }
   
-  .page-main {
-    grid-area: main;
+  .page-battle {
+    grid-area: battle;
+  }
+
+  .page-map {
+    grid-area: map;
   }
   
   .page-nav {

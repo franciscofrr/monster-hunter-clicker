@@ -5,8 +5,11 @@ import Battle from '../Battle/Battle'
 import HunterList from '../HunterList/HunterList';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Map from '../Map/Map'
 
 import monsters from '../../data/monsters.json'
+import locations from '../../data/locations.json'
+
 import './GameController.css'
 
 class GameController extends React.Component {
@@ -14,6 +17,7 @@ class GameController extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        //PLAYER
         playerGuildName: 'Hunter Guild',
         playerGuildRank: 1,
         playerGuildXp: 0,
@@ -26,15 +30,26 @@ class GameController extends React.Component {
         playerGuildDirectAttackPower: 100,
         playerGuildCombinedHunterAttackPower: 0,
         playerGuildMoneyToHireNextHunter: 50,
-        monsterName: null,
+        //MONSTER
+        monsterName: '',
         monsterLevel: null,
         monsterTotalHealth: null,
         monsterCurrentHealth: null,
         monsterDrops: [],
         monsterMoney: 0,
         monsterPoints: 0,
-        monsterRankXp: 0
+        monsterRankXp: 0,
+        //MAP
+        mapLocations: locations,
+        currentLocation: ''
       }
+
+      this.changeCurrentLocation = this.changeCurrentLocation.bind(this);
+      this.refreshMonster = this.refreshMonster.bind(this);
+      this.handleDirectAttack = this.handleDirectAttack.bind(this);
+      this.checkBattleEnd = this.checkBattleEnd.bind(this);
+      this.hireHunter = this.hireHunter.bind(this);
+      this.hunterAutoAttack = this.hunterAutoAttack.bind(this);
     }
   
     componentDidMount() {
@@ -43,6 +58,13 @@ class GameController extends React.Component {
       this.setState({
         playerGuildTotalHunts: 0
       })
+    }
+
+    changeCurrentLocation(location) {
+      this.setState({
+        currentLocation: location
+      })
+      console.log(this.state.currentLocation)
     }
   
     refreshMonster() {
@@ -194,18 +216,25 @@ class GameController extends React.Component {
                     playerGuildRank={this.state.playerGuildRank}
                     playerGuildMoneyToHireNextHunter={this.state.playerGuildMoneyToHireNextHunter}
                     playerGuildHunters={this.state.playerGuildHunters}
-                    hireHunter={() => this.hireHunter()}
+                    hireHunter={this.hireHunter}
                 />
             </aside>
-            <main className="page-main">
+            <main className="page-battle">
                 <Battle
+                    currentLocation={this.state.currentLocation}
                     monsterName={this.state.monsterName}
                     monsterLevel={this.state.monsterLevel}
                     monsterTotalHealth={this.state.monsterTotalHealth}
                     monsterCurrentHealth={this.state.monsterCurrentHealth}
-                    handleDirectAttack={() => this.handleDirectAttack()}
+                    handleDirectAttack={this.handleDirectAttack}
                 />
             </main>
+            <div className="page-map">
+                <Map
+                  locations={this.state.mapLocations}
+                  changeCurrentLocation={this.changeCurrentLocation}
+                />
+            </div>
             <footer className="page-footer">
                 <Footer/>
             </footer>
