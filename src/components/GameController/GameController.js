@@ -55,7 +55,8 @@ class GameController extends React.Component {
       this.checkBattleEnd = this.checkBattleEnd.bind(this);
       this.hireHunter = this.hireHunter.bind(this);
       this.hunterAutoAttack = this.hunterAutoAttack.bind(this);
-      this.increaseMonsterParams = this.increaseMonsterParams.bind(this);
+      this.increaseMonsterHealth = this.increaseMonsterHealth.bind(this);
+      this.increaseMonsterDrops = this.increaseMonsterDrops.bind(this);
     }
   
     componentDidMount() {
@@ -123,19 +124,28 @@ class GameController extends React.Component {
           monsterName: selectedMonster.name,
           monsterSize: monsterSize,
           monsterLevel: this.state.currentLocationLevel - selectedMonster.level,
-          monsterTotalHealth: this.increaseMonsterParams(selectedMonster.health, this.state.currentLocationLevel),
-          monsterCurrentHealth: this.increaseMonsterParams(selectedMonster.health, this.state.currentLocationLevel),
-          monsterMoney: this.increaseMonsterParams(selectedMonster.money, this.state.currentLocationLevel),
-          monsterPoints: this.increaseMonsterParams(selectedMonster.points, this.state.currentLocationLevel),
-          monsterRankXp: this.increaseMonsterParams(selectedMonster.rankXp, this.state.currentLocationLevel),
+          monsterTotalHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+          monsterCurrentHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+          monsterMoney: this.increaseMonsterDrops(selectedMonster.money, this.state.currentLocationLevel),
+          monsterPoints: this.increaseMonsterDrops(selectedMonster.points, this.state.currentLocationLevel),
+          monsterRankXp: this.increaseMonsterDrops(selectedMonster.rankXp, this.state.currentLocationLevel),
           monsterDrops: selectedMonster.drops
         })
     }
 
-    increaseMonsterParams(param, locationLevel) {
+    increaseMonsterHealth(param, locationLevel) {
       //currentenemyhp += anynumber * sqrt(level)
       if (locationLevel > 1) {
         return Math.round(param += 100 * Math.sqrt(locationLevel));
+      } else {
+        return param;
+      }
+    }
+
+    increaseMonsterDrops(param, locationLevel) {
+      //currentenemyhp += anynumber * sqrt(level)
+      if (locationLevel > 1) {
+        return Math.round(param += 10 * Math.sqrt(locationLevel));
       } else {
         return param;
       }
