@@ -15,11 +15,11 @@ class Battle extends React.Component {
         />
       )
     }
-  
+
     render() {
       return (
         <div className="battle-content">
-          Location: {this.props.currentLocation}
+          Location: {this.props.currentLocation} (Level {this.props.currentLocationLevel}) - {this.props.currentLocationSubLevel} Monsters Hunted
           {this.spawnMonster()}
         </div>
       )
