@@ -17,12 +17,26 @@ class Battle extends React.Component {
     }
 
     render() {
-      return (
-        <div className="battle-content">
-          Location: {this.props.currentLocation} (Level {this.props.currentLocationLevel}) - {this.props.currentLocationSubLevel} Monsters Hunted
-          {this.spawnMonster()}
-        </div>
-      )
+      let countdown;
+      if (this.props.monsterSize === 'Large') {
+        countdown = `${this.props.battleTimer} seconds left`;
+      }
+
+      if (this.props.currentLocation) {
+        return (
+          <div className="battle-content">
+            Location: {this.props.currentLocation} (Level {this.props.currentLocationLevel}) - {this.props.currentLocationSubLevel} Monsters Hunted
+            <p>{countdown}</p>
+            {this.spawnMonster()}
+          </div>
+        )
+      } else {
+        return (
+          <div className="battle-content">
+            <p>SELECT A LOCATION TO BEGIN HUNTING</p>
+          </div>
+        )
+      }
     }
 }
 

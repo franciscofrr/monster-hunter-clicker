@@ -32,51 +32,133 @@ class GameController extends React.Component {
         playerGuildMoneyToHireNextHunter: 50,
         //MONSTER
         monsterName: '',
-        monsterLevel: 0,
-        monsterTotalHealth: 0,
-        monsterCurrentHealth: 0,
+        monsterLevel: 1,
+        monsterTotalHealth: 1,
+        monsterCurrentHealth: 1,
         monsterSize: '',
         monsterDrops: [],
-        monsterMoney: 0,
-        monsterPoints: 0,
-        monsterRankXp: 0,
+        monsterMoney: 1,
+        monsterPoints: 1,
+        monsterRankXp: 1,
+        battleTimer: 1,
+        clockId: null,
         //MAP
         mapLocations: locations,
-        currentLocation: '',
+        currentLocation: null,
         currentLocationLevel: 1,
         totalLocationHunts: 0,
         currentLocationHunts: 0,
         currentLocationHuntsToNextLevel: 10
       }
 
+      this.hunterAutoAttack = this.hunterAutoAttack.bind(this);
       this.changeCurrentLocation = this.changeCurrentLocation.bind(this);
       this.refreshMonster = this.refreshMonster.bind(this);
       this.handleDirectAttack = this.handleDirectAttack.bind(this);
       this.checkBattleEnd = this.checkBattleEnd.bind(this);
       this.hireHunter = this.hireHunter.bind(this);
-      this.hunterAutoAttack = this.hunterAutoAttack.bind(this);
       this.increaseMonsterHealth = this.increaseMonsterHealth.bind(this);
       this.increaseMonsterDrops = this.increaseMonsterDrops.bind(this);
+      this.spawnLargeMonster = this.spawnLargeMonster.bind(this);
+      this.spawnSmallMonster = this.spawnSmallMonster.bind(this);
+      this.countdownLargeMonsterBattle = this.countdownLargeMonsterBattle.bind(this);
+      this.runCountdown = this.runCountdown.bind(this);
+      this.resetClock = this.resetClock.bind(this);
     }
   
     componentDidMount() {
       setInterval(this.hunterAutoAttack, 1000);
-      this.refreshMonster();
       this.setState({
-        playerGuildTotalHunts: 0,
-        currentLocation: "Forest"
+        battleTimer: 10
       })
     }
 
     componentDidUpdate() {
-      if (this.state.monsterCurrentHealth <= 0) {
-        this.checkBattleEnd();
+      if (this.state.monsterSize === "Large") {
+        if (this.state.battleTimer <= 0) {
+
+          //Stop timer after large monster battle
+          this.resetClock();
+
+          //Check if monster is still alive after timeout
+          if (this.state.monsterCurrentHealth > 0) {
+            this.setState({
+              currentLocationHuntsToNextLevel: this.state.currentLocationHuntsToNextLevel + 10
+            })
+            this.refreshMonster();
+          }
+        }
+
+        if (this.state.monsterCurrentHealth < 0) {
+          //Defeated large monster - stop timer and check battle end
+          clearInterval(this.state.clockId);
+          this.checkBattleEnd();
+        }
+      } else {
+        if (this.state.monsterCurrentHealth < 0) {
+          //Defeated small monster
+          this.checkBattleEnd();
+        }
       }
     }
 
     changeCurrentLocation(location) {
       this.setState({
-        currentLocation: location
+        currentLocation: location,
+        currentLocationHunts: 0
+      })
+      this.refreshMonster();
+    }
+
+    spawnSmallMonster() {
+      const smallMonsterList = monsters.filter(monster => monster.size === "Small").map((monster) => {
+        return {
+          name: monster.name,
+          health: monster.baseHealth,
+          size: monster.size,
+          money: monster.baseMoney,
+          points: monster.basePoints,
+          rankXp: monster.baseRankXp,
+          drops: monster.drops
+        }
+      })
+      let selectedMonster = smallMonsterList[this.getRandomInt(smallMonsterList.length - 1)]
+      this.setState({
+        monsterName: selectedMonster.name,
+        monsterSize: selectedMonster.size,
+        monsterLevel: this.state.currentLocationLevel - selectedMonster.level,
+        monsterTotalHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+        monsterCurrentHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+        monsterMoney: this.increaseMonsterDrops(selectedMonster.money, this.state.currentLocationLevel),
+        monsterPoints: this.increaseMonsterDrops(selectedMonster.points, this.state.currentLocationLevel),
+        monsterRankXp: this.increaseMonsterDrops(selectedMonster.rankXp, this.state.currentLocationLevel),
+        monsterDrops: selectedMonster.drops
+      })
+    }
+
+    spawnLargeMonster() {
+      const largeMonsterList = monsters.filter(monster => monster.size === "Large").map((monster) => {
+        return {
+          name: monster.name,
+          health: monster.baseHealth,
+          size: monster.size,
+          money: monster.baseMoney,
+          points: monster.basePoints,
+          rankXp: monster.baseRankXp,
+          drops: monster.drops
+        }
+      })
+      let selectedMonster = largeMonsterList[this.getRandomInt(largeMonsterList.length - 1)];
+      this.setState({
+        monsterName: selectedMonster.name,
+        monsterSize: selectedMonster.size,
+        monsterLevel: this.state.currentLocationLevel - selectedMonster.level,
+        monsterTotalHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+        monsterCurrentHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
+        monsterMoney: this.increaseMonsterDrops(selectedMonster.money, this.state.currentLocationLevel),
+        monsterPoints: this.increaseMonsterDrops(selectedMonster.points, this.state.currentLocationLevel),
+        monsterRankXp: this.increaseMonsterDrops(selectedMonster.rankXp, this.state.currentLocationLevel),
+        monsterDrops: selectedMonster.drops
       })
     }
   
@@ -85,52 +167,14 @@ class GameController extends React.Component {
       //bosses are large monsters and have a time check
       //every time the player kills a large monster, the area level increases by 1
 
-      const smallMonsterList = monsters.filter(monster => monster.size === "Small").map((monster) => {
-          return {
-            name: monster.name,
-            health: monster.baseHealth,
-            money: monster.baseMoney,
-            points: monster.basePoints,
-            rankXp: monster.baseRankXp,
-            drops: monster.drops
-          }
-      })
-
-      const largeMonsterList = monsters.filter(monster => monster.size === "Large").map((monster) => {
-          return {
-            name: monster.name,
-            health: monster.baseHealth,
-            money: monster.baseMoney,
-            points: monster.basePoints,
-            rankXp: monster.baseRankXp,
-            drops: monster.drops
-          }
-      })
-
-      let selectedMonster;
-      let monsterSize;
-
       if (this.state.currentLocationHunts > 0 && this.state.currentLocationHunts === this.state.currentLocationHuntsToNextLevel) {
         //Spawn large monster - increase area level by 1 when hunted
-        monsterSize = "Large";
-        selectedMonster = largeMonsterList[this.getRandomInt(largeMonsterList.length - 1)];
+        this.spawnLargeMonster();
+        this.countdownLargeMonsterBattle();
       } else {
         //Spawn small monster
-        monsterSize = "Small";
-        selectedMonster = smallMonsterList[this.getRandomInt(smallMonsterList.length - 1)]
+        this.spawnSmallMonster();
       }
-
-      this.setState({
-          monsterName: selectedMonster.name,
-          monsterSize: monsterSize,
-          monsterLevel: this.state.currentLocationLevel - selectedMonster.level,
-          monsterTotalHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
-          monsterCurrentHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
-          monsterMoney: this.increaseMonsterDrops(selectedMonster.money, this.state.currentLocationLevel),
-          monsterPoints: this.increaseMonsterDrops(selectedMonster.points, this.state.currentLocationLevel),
-          monsterRankXp: this.increaseMonsterDrops(selectedMonster.rankXp, this.state.currentLocationLevel),
-          monsterDrops: selectedMonster.drops
-        })
     }
 
     increaseMonsterHealth(param, locationLevel) {
@@ -143,12 +187,32 @@ class GameController extends React.Component {
     }
 
     increaseMonsterDrops(param, locationLevel) {
-      //currentenemyhp += anynumber * sqrt(level)
       if (locationLevel > 1) {
         return Math.round(param += 10 * Math.sqrt(locationLevel));
       } else {
         return param;
       }
+    }
+
+    countdownLargeMonsterBattle() {
+      this.resetClock();
+      const largeMonsterHuntTime = setInterval(this.runCountdown, 1000);
+      this.setState({
+        clockId: largeMonsterHuntTime
+      })
+    }
+
+    resetClock() {
+      clearInterval(this.state.clockId);
+      this.setState({
+        battleTimer: 10
+      })
+    }
+
+    runCountdown() {
+      this.setState({
+        battleTimer: this.state.battleTimer - 1
+      })
     }
   
     getRandomInt(max) {
@@ -164,14 +228,14 @@ class GameController extends React.Component {
     checkBattleEnd() {
       let monsterDrops = this.state.monsterDrops
       const dropsToAdd = []
-  
+
       monsterDrops.forEach((drop) => {
         const lotteryNumber = this.getRandomInt(100);
         if (lotteryNumber <= drop.chance) {
           dropsToAdd.push(drop.name)
         }
       })
-  
+
       const finalDropsArray = [...this.state.playerGuildMonsterDrops, ...dropsToAdd]
   
       this.setState({
@@ -181,11 +245,10 @@ class GameController extends React.Component {
         playerGuildXp: this.state.playerGuildXp + this.state.monsterRankXp,
         playerGuildMonsterDrops: finalDropsArray,
         currentLocationLevel: this.state.monsterSize === "Large" ? this.state.currentLocationLevel + 1 : this.state.currentLocationLevel,
-        currentLocationHunts: this.state.monsterSize === "Large" ? 0 : this.state.currentLocationHunts + 1,
+        currentLocationHunts: this.state.currentLocationHunts + 1,
         currentLocationHuntsToNextLevel: this.state.monsterSize === "Large" ? Math.round(1.5 * this.state.currentLocationHuntsToNextLevel) : this.state.currentLocationHuntsToNextLevel,
         totalLocationHunts: this.state.totalLocationHunts + 1
       })
-      console.log(this.state.currentLocationHuntsToNextLevel)
       if (this.state.playerGuildXp >= this.state.playerGuildXpToNextLevel) {
         this.setState({
           playerGuildRank: this.state.playerGuildRank + 1,
@@ -285,6 +348,8 @@ class GameController extends React.Component {
                     monsterLevel={this.state.monsterLevel}
                     monsterTotalHealth={this.state.monsterTotalHealth}
                     monsterCurrentHealth={this.state.monsterCurrentHealth}
+                    monsterSize={this.state.monsterSize}
+                    battleTimer={this.state.battleTimer}
                     handleDirectAttack={this.handleDirectAttack}
                 />
             </main>
