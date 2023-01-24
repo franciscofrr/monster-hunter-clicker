@@ -17,6 +17,9 @@ class GameController extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        //ENUMS
+        HUNTER_RANKS: ['Low Rank', 'High Rank', 'Master Rank', 'G-Rank'],
+        WEAPON_TYPES: ['Bow', 'Charge Blade', 'Dual Blades', 'Great Sword', 'Gunlance', 'Hammer', 'Heavy Bowgun', 'Hunting Horn', 'Insect Glaive', 'Lance', 'Light Bowgun', 'Long Sword', 'Switch Axe', 'Sword and Shield'],
         //PLAYER
         playerGuildName: 'Hunter Guild',
         playerGuildRank: 1,
@@ -44,7 +47,8 @@ class GameController extends React.Component {
         clockId: null,
         //MAP
         mapLocations: locations,
-        currentLocation: null,
+        currentLocationName: '',
+        currentLocationMonsters: [],
         currentLocationLevel: 1,
         totalLocationHunts: 0,
         currentLocationHunts: 0,
@@ -59,8 +63,7 @@ class GameController extends React.Component {
       this.hireHunter = this.hireHunter.bind(this);
       this.increaseMonsterHealth = this.increaseMonsterHealth.bind(this);
       this.increaseMonsterDrops = this.increaseMonsterDrops.bind(this);
-      this.spawnLargeMonster = this.spawnLargeMonster.bind(this);
-      this.spawnSmallMonster = this.spawnSmallMonster.bind(this);
+      this.spawnMonster = this.spawnMonster.bind(this);
       this.countdownLargeMonsterBattle = this.countdownLargeMonsterBattle.bind(this);
       this.runCountdown = this.runCountdown.bind(this);
       this.resetClock = this.resetClock.bind(this);
@@ -102,27 +105,32 @@ class GameController extends React.Component {
       }
     }
 
-    changeCurrentLocation(location) {
+    changeCurrentLocation(locationName) {
       this.setState({
-        currentLocation: location,
+        currentLocationName: locations.find(location => location.name === locationName).name,
+        currentLocationMonsters: locations.find(location => location.name === locationName).monsters,
         currentLocationHunts: 0
+      }, () => {
+        this.refreshMonster();
       })
-      this.refreshMonster();
     }
 
-    spawnSmallMonster() {
-      const smallMonsterList = monsters.filter(monster => monster.size === "Small").map((monster) => {
-        return {
-          name: monster.name,
-          health: monster.baseHealth,
-          size: monster.size,
-          money: monster.baseMoney,
-          points: monster.basePoints,
-          rankXp: monster.baseRankXp,
-          drops: monster.drops
-        }
-      })
-      let selectedMonster = smallMonsterList[this.getRandomInt(smallMonsterList.length - 1)]
+    spawnMonster(monsterSize) {
+      const monsterList = monsters
+        .filter(monster => this.state.currentLocationMonsters.includes(monster.name))
+        .filter(monster => monster.size === monsterSize)
+        .map((monster) => {
+          return {
+            name: monster.name,
+            health: monster.baseHealth,
+            size: monster.size,
+            money: monster.baseMoney,
+            points: monster.basePoints,
+            rankXp: monster.baseRankXp,
+            drops: monster.drops
+          }
+        })
+      let selectedMonster = monsterList[this.getRandomInt(monsterList.length - 1)]
       this.setState({
         monsterName: selectedMonster.name,
         monsterSize: selectedMonster.size,
@@ -136,44 +144,20 @@ class GameController extends React.Component {
       })
     }
 
-    spawnLargeMonster() {
-      const largeMonsterList = monsters.filter(monster => monster.size === "Large").map((monster) => {
-        return {
-          name: monster.name,
-          health: monster.baseHealth,
-          size: monster.size,
-          money: monster.baseMoney,
-          points: monster.basePoints,
-          rankXp: monster.baseRankXp,
-          drops: monster.drops
-        }
-      })
-      let selectedMonster = largeMonsterList[this.getRandomInt(largeMonsterList.length - 1)];
-      this.setState({
-        monsterName: selectedMonster.name,
-        monsterSize: selectedMonster.size,
-        monsterLevel: this.state.currentLocationLevel - selectedMonster.level,
-        monsterTotalHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
-        monsterCurrentHealth: this.increaseMonsterHealth(selectedMonster.health, this.state.currentLocationLevel),
-        monsterMoney: this.increaseMonsterDrops(selectedMonster.money, this.state.currentLocationLevel),
-        monsterPoints: this.increaseMonsterDrops(selectedMonster.points, this.state.currentLocationLevel),
-        monsterRankXp: this.increaseMonsterDrops(selectedMonster.rankXp, this.state.currentLocationLevel),
-        monsterDrops: selectedMonster.drops
-      })
-    }
-  
     refreshMonster() {
       //spawn regular small monsters during normal level
       //bosses are large monsters and have a time check
       //every time the player kills a large monster, the area level increases by 1
 
-      if (this.state.currentLocationHunts > 0 && this.state.currentLocationHunts === this.state.currentLocationHuntsToNextLevel) {
-        //Spawn large monster - increase area level by 1 when hunted
-        this.spawnLargeMonster();
-        this.countdownLargeMonsterBattle();
-      } else {
-        //Spawn small monster
-        this.spawnSmallMonster();
+      if (this.state.currentLocationMonsters.length > 0) {
+        if (this.state.currentLocationHunts > 0 && this.state.currentLocationHunts === this.state.currentLocationHuntsToNextLevel) {
+          //Spawn large monster - increase area level by 1 when hunted
+          this.spawnMonster("Large");
+          this.countdownLargeMonsterBattle();
+        } else {
+          //Spawn small monster
+          this.spawnMonster("Small");
+        }
       }
     }
 
@@ -260,34 +244,9 @@ class GameController extends React.Component {
     }
   
     hireHunter() {
-        const weaponTypes = [
-            'Bow',
-            'Charge Blade',
-            'Dual Blades',
-            'Great Sword',
-            'Gunlance',
-            'Hammer',
-            'Heavy Bowgun',
-            'Hunting Horn',
-            'Insect Glaive',
-            'Lance',
-            'Light Bowgun',
-            'Long Sword',
-            'Switch Axe',
-            'Sword and Shield'
-        ]
-  
-      /*
-        const hunterRanks = [
-            'Low Rank',
-            'High Rank',
-            'G-Rank'
-        ]
-      */
-  
       const newHunter = {
         name: 'Name',
-        weapon: weaponTypes[this.getRandomInt(13)],
+        weapon: this.state.WEAPON_TYPES[this.getRandomInt(13)],
         rank: 1,
         attackPower: 10
       }
@@ -341,7 +300,7 @@ class GameController extends React.Component {
             </aside>
             <main className="page-battle">
                 <Battle
-                    currentLocation={this.state.currentLocation}
+                    currentLocation={this.state.currentLocationName}
                     currentLocationLevel={this.state.currentLocationLevel}
                     currentLocationSubLevel={this.state.totalLocationHunts}
                     monsterName={this.state.monsterName}
