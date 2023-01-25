@@ -1,12 +1,16 @@
 [
     {
         "name":"Guild",
+        "level": 1,
+        "hunts": 0,
         "monsters": [
             "Shakalaka"
         ]
     },
     {
         "name":"Forest",
+        "level": 1,
+        "hunts": 0,
         "monsters": [
             "Altaroth",
             "Apceros",
@@ -43,6 +47,8 @@
     },
     {
         "name":"Beach",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Aptonoth",
@@ -79,6 +85,8 @@
     },
     {
         "name":"Desert",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Brown Slagtoth",
@@ -114,6 +122,8 @@
     },
     {
         "name":"Swamp",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Aptonoth",
@@ -146,6 +156,8 @@
     },
     {
         "name":"Jungle",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Apceros",
@@ -192,6 +204,8 @@
     },
     {
         "name":"Volcano",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Uroktor",
@@ -221,6 +235,8 @@
     },
     {
         "name":"Tower",
+        "level": 1,
+        "hunts": 0,
         "monsters":[
             "Altaroth",
             "Blue Bnahabra",

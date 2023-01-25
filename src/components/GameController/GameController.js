@@ -67,6 +67,7 @@ class GameController extends React.Component {
       this.countdownLargeMonsterBattle = this.countdownLargeMonsterBattle.bind(this);
       this.runCountdown = this.runCountdown.bind(this);
       this.resetClock = this.resetClock.bind(this);
+      this.updateArea = this.updateArea.bind(this);
     }
   
     componentDidMount() {
@@ -105,10 +106,26 @@ class GameController extends React.Component {
       }
     }
 
+    updateArea(name, newLevel, hunts) {
+      for (var i = 0; i < this.state.mapLocations.length; i++) {
+        if (this.state.mapLocations[i].name === name) {
+          this.setState(prevState => ({
+            mapLocations: prevState.mapLocations.map(
+              location => location.name === name? { ...location, level: newLevel, hunts: hunts }: location
+            )
+          }))
+          console.log(this.state.mapLocations)
+          return;
+        }
+      }
+    }
+
     changeCurrentLocation(locationName) {
       this.setState({
-        currentLocationName: locations.find(location => location.name === locationName).name,
-        currentLocationMonsters: locations.find(location => location.name === locationName).monsters,
+        currentLocationName: this.state.mapLocations.find(location => location.name === locationName).name,
+        currentLocationMonsters: this.state.mapLocations.find(location => location.name === locationName).monsters,
+        currentLocationLevel: this.state.mapLocations.find(location => location.name === locationName).level,
+        totalLocationHunts: this.state.mapLocations.find(location => location.name === locationName).hunts,
         currentLocationHunts: 0
       }, () => {
         this.refreshMonster();
@@ -228,10 +245,14 @@ class GameController extends React.Component {
         playerGuildPoints: this.state.playerGuildPoints + this.state.monsterPoints,
         playerGuildXp: this.state.playerGuildXp + this.state.monsterRankXp,
         playerGuildMonsterDrops: finalDropsArray,
+
         currentLocationLevel: this.state.monsterSize === "Large" ? this.state.currentLocationLevel + 1 : this.state.currentLocationLevel,
         currentLocationHunts: this.state.currentLocationHunts + 1,
         currentLocationHuntsToNextLevel: this.state.monsterSize === "Large" ? Math.round(1.5 * this.state.currentLocationHuntsToNextLevel) : this.state.currentLocationHuntsToNextLevel,
+        
         totalLocationHunts: this.state.totalLocationHunts + 1
+      }, () => {
+        this.updateArea(this.state.currentLocationName, this.state.currentLocationLevel, this.state.totalLocationHunts)
       })
       if (this.state.playerGuildXp >= this.state.playerGuildXpToNextLevel) {
         this.setState({
