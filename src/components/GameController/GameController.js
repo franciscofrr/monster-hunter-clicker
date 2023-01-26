@@ -111,7 +111,11 @@ class GameController extends React.Component {
         if (this.state.mapLocations[i].name === name) {
           this.setState(prevState => ({
             mapLocations: prevState.mapLocations.map(
-              location => location.name === name? { ...location, level: newLevel, hunts: hunts }: location
+              location => location.name === name ? 
+                { ...location,
+                  level: newLevel,
+                  hunts: hunts
+                } : location
             )
           }))
           console.log(this.state.mapLocations)
@@ -125,7 +129,7 @@ class GameController extends React.Component {
         currentLocationName: this.state.mapLocations.find(location => location.name === locationName).name,
         currentLocationMonsters: this.state.mapLocations.find(location => location.name === locationName).monsters,
         currentLocationLevel: this.state.mapLocations.find(location => location.name === locationName).level,
-        totalLocationHunts: this.state.mapLocations.find(location => location.name === locationName).hunts,
+        totalLocationHunts: this.state.mapLocations.find(location => location.name === locationName).totalHunts,
         currentLocationHunts: 0
       }, () => {
         this.refreshMonster();
